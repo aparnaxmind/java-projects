@@ -1,0 +1,31 @@
+package com.student.demo.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Set;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name="teacher")
+public class Teacher {
+    @Id
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "teacher_sequence"
+    )
+    private Long  teacherId;
+    private String name;
+    private String email;
+    private Long contactNumber;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "teacher")
+    private List<Course> courseList;
+}
+
