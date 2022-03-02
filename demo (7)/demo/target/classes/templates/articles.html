@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<h1 th:each="articles : ${articles}">-->
+<!--    <span th:text="${articles.name}">name</span>-->
+<!--    <span th:text="${articles.author}">author</span>-->
+<!--   </h1>-->
+<table>
+    <tr th:each="article : ${articles}">
+        <td th:text="${article.name}">name</td>
+        <td></td><td></td>
+        <td th:text="${article.author}">author</td>
+    </tr>
+</table>
+
+
+</body>
+</html>
